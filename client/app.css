@@ -1,7 +1,69 @@
-﻿a {
+html, body, .jumbotron{
+    background: #809fff;
+}
+a {
     cursor: pointer;
 }
 
 .help-block {
     font-size: 12px;
+}
+
+.jumbotron{
+    align-content: center;
+    width: 100%;
+    height: 100%;
+
+}
+
+
+#header .loginImg{
+  height: 203px;
+  width: 237px;
+  margin-top: 113px;
+  margin-left: -143px;
+}
+#header .loginTitle{
+    margin-top: -242px;
+    margin-bottom: 39px;
+    color: #0039e6;
+    text-align: center;
+    font-size: 63px;
+    margin-left: 136px;
+    width: 50%;
+}
+
+.goiburu{
+    margin-left: 54px;
+    margin-right: -116px;
+}
+.form-group{
+  margin-left: 30px;
+  margin-right: -4px;
+}
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.btn-primary{
+    background: #2e2eb8;
+    margin-left: 117px;
 }

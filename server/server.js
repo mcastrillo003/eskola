@@ -1,11 +1,18 @@
+'use strict'
 ﻿require('rootpath')();
+//Express zerbitzariaren konfigurazioa, carga de rutas
 var express = require('express');
+//cargar la aplicacion de Express
 var app = express();
 var cors = require('cors');
 var bodyParser = require('body-parser');
 var expressJwt = require('express-jwt');
 var config = require('config.json');
 
+//carga de rutas
+var user_routes=require('./routes/user');
+
+//parsear las peticiones que nos vienen por JSON en objeto JavaScript
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -22,10 +29,26 @@ app.use(expressJwt({
         return null;
     }
 }).unless({ path: ['/users/authenticate'] })); //hemendik agian register ezabatu behar da
-//unless({ path: ['/users/authenticate', '/users/register'] }));
 
-// routes
-app.use('/users', require('./controllers/users.controller'));
+/* Hau oraindik ez dugu behar
+
+  //configurar cabeceras-->middleware
+  //gure middlewarea sortu errorerik ez gertatzeko konbertsioetan. Zerbitzari ezberdinen artean errekurtsoak partekatu ahal izateko
+  app.use((req,res,next)=>{
+  res.header('Access-Control-Allow-Origin','*');//*=edozein. Hortaz, edozeinek izan ahalko du sarbidea
+  res.header('Access-Control-Allow-Headers','X-API-KEY,Origin,X-Repuested-With,Content-Type,Accept,Access-Control-Request-Method');
+
+  //metodos http que pueden utilizarse en el Api=Los metodos que nos pueden llegar
+  res.header('Access-Control-Allow-Methods','GET,POST,OPTIONS,PUT,DELETE');
+  res.header('Allow','GET,POST,OPTIONS,PUT,DELETE');
+
+  next();//tenemos que lanzar la funcion next para que se salga de esta funcion
+});
+*/
+
+// routes. Configurar controladores y rutas base
+app.use('/users', user_routes);
+
 
 // error handler
 app.use(function (err, req, res, next) {

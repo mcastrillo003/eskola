@@ -1,17 +1,12 @@
+'use strict'
 ﻿var config = require('config.json');
-var express = require('express');
-var router = express.Router();
+//login-eko zerbitzua erabili eta db pasatzeko hau erabili:
 var userService = require('services/user.service');
+//hemendik aurrera userrekin sortzen ditudan funtzioak dbra pasatzeko hau erabili:
+var User=require('../models/user');
 
-// routes
-router.post('/authenticate', authenticate);
-router.get('/', getAll);
-router.get('/current', getCurrent);
-router.put('/:_id', update);
-router.delete('/:_id', _delete);
-
-module.exports = router;
-
+//....................................................................................
+//LOGIN ATALA
 function authenticate(req, res) {
     userService.authenticate(req.body.username, req.body.password)
         .then(function (user) {
@@ -71,3 +66,11 @@ function _delete(req, res) {
             res.status(400).send(err);
         });
 }
+module.exports={
+    authenticate,
+    getAll,
+    getCurrent,
+    update,
+    _delete
+}
+//....................................................................................

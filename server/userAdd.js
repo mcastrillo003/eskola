@@ -1,12 +1,11 @@
 
 var userService = require('./services/user.service');
-var user=require('../client/app/_models/index');
-
+var user=require('../client/app/models/user');
 /*Sartu hemen erregistratu nahi duzun erabiltzailearen datuak*/
 
-user.username="mireiac";
-user.password="mireia";
-user.firstName="mireia";
+user.username="javi";
+user.password="javi";
+user.firstName="javi";
 user.lastName="castrillo";
 
 

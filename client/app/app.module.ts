@@ -6,12 +6,12 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppComponent }  from './app.component';
 import { routing }        from './app.routing';
 
-import { AlertComponent } from './_directives/index';
-import { AuthGuard } from './_guards/index';
-import { JwtInterceptorProvider, ErrorInterceptorProvider } from './_helpers/index';
-import { AlertService, AuthenticationService, UserService } from './_services/index';
-import { HomeComponent } from './home/index';
-import { LoginComponent } from './login/index';
+import { AlertComponent } from './components/alert.component';
+import { AuthGuard } from './guards/auth.guard';
+import { JwtInterceptorProvider, ErrorInterceptorProvider } from './helpers/index';
+import { AlertService, AuthenticationService, UserService } from './services/index';
+import { HomeComponent } from './components/home.component';
+import { LoginComponent } from './components/login.component';
 
 @NgModule({
     imports: [

@@ -1,13 +1,19 @@
-﻿<div class="col-md-6 col-md-offset-3">
-    <h2>Login</h2>
+<header id="header">
+  <div class="goiburu">
+    <img class="loginImg" src="../assets/images/liburua.png"/>
+    <h2 class="loginTitle">Login eskola</h2>
+  </div>
+</header>
+
+<div class="col-md-6 col-md-offset-3">
     <form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
         <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
-            <label for="username">Username</label>
+            <label for="username">Erabiltzailea</label>
             <input type="text" class="form-control" name="username" [(ngModel)]="model.username" #username="ngModel" required />
             <div *ngIf="f.submitted && !username.valid" class="help-block">Username is required</div>
         </div>
         <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
-            <label for="password">Password</label>
+            <label for="password">Pasahitza</label>
             <input type="password" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel" required />
             <div *ngIf="f.submitted && !password.valid" class="help-block">Password is required</div>
         </div>
