@@ -1,0 +1,3 @@
+-CYGWIN ireki
+-cd /cygdrive/c/wamp/www/curso-node-angular/Eskola/server
+-node userAdd.js
