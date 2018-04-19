@@ -1,5 +1,7 @@
 html, body, .jumbotron{
-    background: #809fff;
+    /*background: #809fff;/*1.aukera:urdina*/
+  /*  background: *#b3ffcc;/*2.aukera:berdea*/
+  background: #b3ffcc;
 }
 a {
     cursor: pointer;
@@ -24,13 +26,14 @@ a {
   margin-left: -143px;
 }
 #header .loginTitle{
-    margin-top: -242px;
-    margin-bottom: 39px;
-    color: #0039e6;
-    text-align: center;
-    font-size: 63px;
-    margin-left: 136px;
-    width: 50%;
+  margin-top: -275px;
+  margin-bottom: 39px;
+  /*color: #0039e6;/*1.aukera: urdina*/
+  color: #00b33c;/*2.aukera: berdea*/
+  text-align: center;
+  font-size: 70px;
+  margin-left: 128px;
+  width: 50%;
 }
 
 .goiburu{
@@ -38,8 +41,9 @@ a {
     margin-right: -116px;
 }
 .form-group{
-  margin-left: 30px;
-  margin-right: -4px;
+    margin-left: 30px;
+    margin-right: -4px;
+    margin-top: 22px;
 }
 .btn {
     display: inline-block;
@@ -66,4 +70,15 @@ a {
 .btn-primary{
     background: #2e2eb8;
     margin-left: 117px;
+}
+.kaixo{
+  margin-left: -38px;
+  margin-right: -163px;
+}
+footer{
+  width: 80%;
+  margin: 0px auto;
+  margin-top: 133px;
+  color: gray;
+  margin-left: 12px;
 }

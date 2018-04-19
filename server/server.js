@@ -11,6 +11,7 @@ var config = require('config.json');
 
 //carga de rutas
 var user_routes=require('./routes/user');
+var publi_routes=require('./routes/publication');
 
 //parsear las peticiones que nos vienen por JSON en objeto JavaScript
 app.use(cors());
@@ -48,6 +49,7 @@ app.use(expressJwt({
 
 // routes. Configurar controladores y rutas base
 app.use('/users', user_routes);
+app.use('/publications', publi_routes);
 
 
 // error handler

@@ -14,7 +14,7 @@ service.getAll = getAll;
 service.getById = getById;
 service.create = create;
 service.update = update;
-service.delete = _delete;
+service._delete = _delete;
 
 module.exports = service;
 
@@ -92,7 +92,8 @@ function create(userParam) {
 
             if (user) {
                 // username already exists
-                deferred.reject('Username "' + userParam.username + '" is already taken');
+                deferred.reject(userParam.username + ' erabiltzailea jadanik aukeratuta dago');
+
 
             } else {
                 createUser();
@@ -121,6 +122,9 @@ function create(userParam) {
 //UpdateUser
 function update(_id, userParam) {
     var deferred = Q.defer();
+    userParam.firstName=userParam.firstName.toLowerCase();
+    userParam.lastName=userParam.lastName.toLowerCase();
+    userParam.lastName2=userParam.lastName2.toLowerCase();
 
     // validation
     db.users.findById(_id, function (err, user) {

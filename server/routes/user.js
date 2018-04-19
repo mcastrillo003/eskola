@@ -8,7 +8,11 @@ var router = express.Router();
 router.post('/authenticate', UserController.authenticate);
 router.get('/', UserController.getAll);
 router.get('/current', UserController.getCurrent);
-router.put('/:_id', UserController.update);
+router.get('/byIzena/:sartutakoa', UserController.getByIzena);
+router.get('/:id', UserController.getUser);
+//router.put('/:_id', UserController.update);
+router.put('/:id', UserController.updateUser);
 router.delete('/:_id', UserController._delete);
-
+router.post('/add',UserController.addUser);
+router.delete('/delete/:id',UserController.deleteUser);
 module.exports = router;

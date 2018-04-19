@@ -1,0 +1,7 @@
+-CYGWIN ireki(1.konsola)
+-cd /cygdrive/c/wamp/www/curso-node-angular/Eskola/server
+-npm start
+
+-CYGWIN ireki(2.konsola)
+-cd /cygdrive/c/wamp/www/curso-node-angular/Eskola/client
+-npm start

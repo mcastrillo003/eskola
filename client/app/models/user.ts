@@ -1,6 +1,7 @@
 ﻿export class User {
   constructor(
-    public _id: string,
+    //_id atributua ere izango du, mongok berez sortzen duelako
+    public _id:string,
     public username: string,
     public password: string,
     public firstName: string,
